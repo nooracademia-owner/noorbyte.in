@@ -1,46 +1,178 @@
-body {
+/* Basic Reset */
+* {
     margin: 0;
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #000000;
-    color: #f0f2f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
 .container {
-    background-color: transparent;
-    padding: 40px 60px;
-    border-radius: 12px;
-    box-shadow: none;
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
 }
 
-.logo {
-    max-width: 400px;
-    height: auto;
-    margin-bottom: 30px;
+/* Header */
+header {
+    background: url('../logo/header-background.png') no-repeat center center/cover;
+    color: #fff;
+    padding: 1rem 0;
+    border-bottom: #0779e4 3px solid;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-h1 {
-    font-size: 24px;
-    color: #ff7f50; /* A friendly coral color */
-    margin-bottom: 25px;
+header a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Improves readability on background */
 }
 
-.loader {
-    border: 5px solid rgba(240, 242, 245, 0.3); /* Subtle light grey */
-    border-top: 5px solid #ff7f50; /* Coral to match h1 */
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1.5s linear infinite;
-    margin: 0 auto; /* Center horizontally */
+header .container {
+    display: flex;
+    justify-content: space-between; /* Puts space between logo and nav */
+    align-items: center;
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+header #branding img {
+    height: 90px;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    padding: 0 20px;
+}
+
+header nav a:hover {
+    color: #0779e4;
+    font-weight: bold;
+}
+
+/* Hero Section */
+#hero {
+    min-height: 400px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1559028006-44d5a2b7190d?q=80&w=1974&auto=format&fit=crop') no-repeat center center/cover;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+#hero h1 {
+    font-size: 55px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px #000;
+}
+
+#hero p {
+    font-size: 20px;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.button {
+    display: inline-block;
+    background: #0779e4;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Sections */
+section {
+    padding: 60px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+/* Services */
+#services .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+#services .service-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#services .service-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+#services .service-box i {
+    font-size: 48px;
+    color: #0779e4;
+    margin-bottom: 15px;
+}
+
+/* Portfolio */
+#portfolio {
+    background: #fff;
+}
+#portfolio .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+#portfolio .portfolio-item img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+#portfolio .portfolio-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Contact */
+#contact p {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #333;
+    color: #fff;
 }
